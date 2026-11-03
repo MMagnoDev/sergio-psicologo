@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SÃ©rgio Siriani â€” PsicÃ³logo | Terapia Online</title>
+  <meta name="description" content="PsicÃ³logo SÃ©rgio Siriani. Atendimento online e em Lagoa da Prataâ€“MG. Agende sua consulta pelo WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.20/dist/lenis.css" />
+
+  <style>
+    /* â”€â”€ Reset & Lenis â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:   #f4f0e8;
+      --cream2:  #ede8de;
+      --cream3:  #e6dfd3;
+      --dark:    #1b2637;
+      --text:    #232d3b;
+      --muted:   #6e7a8a;
+      --border:  #d4ccbc;
+      --accent:  #3a5068;
+      --green:   #4a7c59;
+      --serif:   'Cormorant Garamond', Georgia, serif;
+      --sans:    'Inter', system-ui, sans-serif;
+      --wa:      #25D366;
+    }
+
+    html.lenis, html.lenis body {
+      height: auto;
+    }
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.78;
+      overflow-x: hidden;
+    }
+
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    a   { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+
+    /* â”€â”€ REVEAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    [data-reveal="left"]  { transform: translateX(-26px); }
+    [data-reveal="right"] { transform: translateX(26px); }
+    [data-reveal].is-visible { opacity: 1; transform: translate(0, 0); }
+
+
+    /* â”€â”€ NAV â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 52px;
+      transition: background 0.4s ease, backdrop-filter 0.4s ease;
+    }
+
+    nav.scrolled {
+      background: rgba(27, 38, 55, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-logo-img {
+      height: 36px;
+      width: auto;
+      filter: invert(1);
+      mix-blend-mode: screen;
+      opacity: 0.92;
+    }
+
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 400;
+      color: #e8e2d8;
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+    }
+
+    .nav-crp {
+      font-size: 10px;
+      color: rgba(232, 226, 216, 0.45);
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 34px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: rgba(232, 226, 216, 0.58);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: #e8e2d8; }
+
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e8e2d8;
+      padding: 9px 20px;
+      border: 1px solid rgba(232, 226, 216, 0.3);
+      transition: background 0.25s, border-color 0.25s;
+    }
+
+    .nav-cta:hover {
+      background: rgba(232, 226, 216, 0.1);
+      border-color: rgba(232, 226, 216, 0.5);
+    }
+
+    .nav-cta svg { width: 14px; height: 14px; fill: currentColor; }
+
+
+    /* â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 640px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('fotos/heroimg.webp');
+      background-size: cover;
+      background-position: right 30%;
+      filter: brightness(0.65);
+      transform: scale(1.04);
+      transition: transform 8s ease;
+    }
+
+    .hero.loaded .hero-bg { transform: scale(1); }
+
+    .hero-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(20, 29, 43, 0.92) 0%,
+        rgba(20, 29, 43, 0.75) 45%,
+        rgba(20, 29, 43, 0.22) 75%,
+        rgba(20, 29, 43, 0.45) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%;
+      padding: 0 52px 88px;
+      max-width: 900px;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(44px, 5.6vw, 76px);
+      font-weight: 300;
+      line-height: 1.07;
+      color: #ece6db;
+      margin-bottom: 22px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .hero-sub {
+      font-size: 13px;
+      color: rgba(236, 230, 219, 0.62);
+      max-width: 360px;
+      line-height: 1.88;
+      margin-bottom: 38px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--wa);
+      color: #fff;
+      padding: 14px 28px;
+      font-size: 11px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      font-weight: 400;
+      transition: background 0.25s;
+    }
+
+    .btn-wa:hover { background: #1eb858; }
+
+    .btn-wa svg { width: 16px; height: 16px; fill: #fff; flex-shrink: 0; }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(236, 230, 219, 0.8);
+      padding: 14px 28px;
+      border: 1px solid rgba(236, 230, 219, 0.28);
+      font-size: 11px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      transition: background 0.25s, border-color 0.25s;
+    }
+
+    .btn-outline:hover {
+      background: rgba(236, 230, 219, 0.07);
+      border-color: rgba(236, 230, 219, 0.5);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      right: 52px;
+      bottom: 88px;
+      z-index: 2;
+      writing-mode: vertical-rl;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(236, 230, 219, 0.32);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .hero-scroll::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 52px;
+      background: rgba(236, 230, 219, 0.18);
+    }
+
+
+    /* â”€â”€ ABOUT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 520px;
+    }
+
+    .about-left {
+      padding: 92px 72px 92px 88px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-title {
+      font-family: var(--serif);
+      font-size: clamp(26px, 3.2vw, 44px);
+      font-weight: 300;
+      line-height: 1.22;
+      margin-bottom: 26px;
+    }
+
+    .about-title em { font-style: italic; }
+
+    .about-body {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 440px;
+      line-height: 1.92;
+      margin-bottom: 32px;
+    }
+
+    .about-dots {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+    }
+
+    .about-dots span {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--muted);
+      opacity: 0.3;
+    }
+
+    .about-dots span:first-child { opacity: 1; }
+
+    .about-right {
+      background: var(--cream2);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      border-left: 1px solid var(--border);
+    }
+
+    .about-stats {
+      padding: 30px 44px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      border-bottom: 1px solid var(--border);
+      background: var(--cream2);
+      flex-shrink: 0;
+    }
+
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 38px;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--text);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 10.5px;
+      color: var(--muted);
+      margin-top: 6px;
+      display: block;
+      line-height: 1.5;
+    }
+
+    .about-img-single {
+      flex: 1;
+      width: 100%;
+      min-height: 420px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-img-single img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      transition: transform 0.7s ease;
+    }
+
+    .about-img-single:hover img { transform: scale(1.03); }
+
+
+    /* â”€â”€ SERVICES (como funciona) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    .services {
+      padding: 104px 88px;
+      background: var(--cream);
+    }
+
+    .services-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+
+    .services-title {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4vw, 56px);
+      font-weight: 300;
+      line-height: 1.08;
+    }
+
+    .services-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.92;
+      max-width: 380px;
+      align-self: end;
+    }
+
+    .service-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: padding-left 0.25s;
+    }
+
+    .service-item:first-of-type { border-top: 1px solid var(--border); }
+    .service-item:hover { padding-left: 10px; }
+
+    .service-left {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .service-num {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      min-width: 24px;
+    }
+
+    .service-name {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.5vw, 34px);
+      font-weight: 300;
+    }
+
+    .service-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .service-tag {
+      font-size: 10px;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      padding: 4px 13px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      transition: all 0.2s;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .service-tag.active,
+    .service-tag:hover {
+      background: var(--text);
+      color: var(--cream);
+      border-color: var(--text);
+    }
+
+    .service-arrow {
+      font-size: 20px;
+      color: var(--muted);
+      transition: transform 0.2s;
+    }
+
+    .service-item:hover .service-arrow { transform: translateX(5px); }
+
+    /* â”€â”€ SERVICE MODAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    .service-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(22, 21, 15, 0.78);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 24px;
+    }
+
+    .service-modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .service-modal-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      width: 100%;
+      max-width: 580px;
+      padding: 44px 44px 38px;
+      transform: translateY(22px) scale(0.97);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 24px 60px -15px rgba(18, 26, 40, 0.28);
+      position: relative;
+    }
+
+    .service-modal-backdrop.active .service-modal-card {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      font-size: 28px;
+      line-height: 1;
+      color: var(--muted);
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 6px;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .modal-close-btn:hover {
+      color: var(--dark);
+      transform: rotate(90deg);
+    }
+
+    .modal-header {
+      margin-bottom: 20px;
+    }
+
+    .modal-num {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .modal-title {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--text);
+    }
+
+    .modal-body {
+      margin-bottom: 30px;
+    }
+
+    .modal-lead {
+      font-size: 14.5px;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 14px;
+      font-weight: 400;
+    }
+
+    .modal-text {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 22px;
+    }
+
+    .modal-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .modal-tag {
+      font-size: 10.5px;
+      color: var(--text);
+      background: var(--cream2);
+      border: 1px solid var(--border);
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+
+    .modal-details-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .modal-detail-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-detail-label {
+      font-size: 9.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .modal-detail-val {
+      font-size: 12px;
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .modal-wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--wa);
+      color: #fff;
+      padding: 13px 26px;
+      font-size: 11.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 400;
+      transition: background 0.25s, transform 0.2s;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .modal-wa-btn:hover {
+      background: #1eb858;
+      transform: translateY(-1px);
+    }
+
+    .modal-wa-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: #fff;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 600px) {
+      .service-modal-card { padding: 32px 24px; }
+      .modal-details-grid { grid-template-columns: 1fr; gap: 12px; }
+    }
+
+    .service-photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 52px 0;
+      height: 290px;
+    }
+
+    .service-photo { overflow: hidden; }
+    .service-photo img { transition: transform 0.7s ease; }
+    .service-photo:hover img { transform: scale(1.05); }
+
+
+    /* â”€â”€ ELEVATE (terapia online) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    .elevate {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 560px;
+    }
+
+    .elevate-img {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .elevate-img img {
+      position: absolute;
+      inset: 0;
+      filter: sepia(0.1) brightness(0.82);
+      transition: transform 0.8s ease;
+    }
+
+    .elevate-img:hover img { transform: scale(1.03); }
+
+    .elevate-content {
+      background: #1b2637;
+      padding: 88px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .elevate-title {
+      font-family: var(--serif);
+      font-size: clamp(30px, 3.8vw, 52px);
+      font-weight: 300;
+      line-height: 1.12;
+      color: #eae3d8;
+      margin-bottom: 24px;
+    }
+
+    .elevate-title em { font-style: italic; }
+
+    .elevate-body {
+      font-size: 13px;
+      color: rgba(234, 227, 216, 0.58);
+      line-height: 1.92;
+      max-width: 360px;
+      margin-bottom: 44px;
+    }
+
+    .elevate-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--wa);
+      color: #fff;
+      padding: 13px 26px;
+      font-size: 11px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      width: fit-content;
+      transition: background 0.25s;
+    }
+
+    .elevate-btn:hover { background: #1eb858; }
+    .elevate-btn svg { width: 15px; height: 15px; fill: #fff; }
+
+    .elevate-points {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 44px;
+    }
+
+    .elevate-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 12.5px;
+      color: rgba(234, 227, 216, 0.62);
+      line-height: 1.7;
+    }
+
+    .elevate-point::before {
+      content: 'â€”';
+      color: rgba(234, 227, 216, 0.3);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+
+    /* â”€â”€ TESTIMONIAL (depoimento placeholder) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    .testimonial {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 420px;
+    }
+
+    .testimonial-content {
+      background: var(--cream);
+      padding: 88px 72px 88px 88px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .quote-mark {
+      font-family: var(--serif);
+      font-size: 80px;
+      line-height: 0.55;
+      color: var(--border);
+      margin-bottom: 28px;
+      display: block;
+    }
+
+    .testimonial-text {
+      font-family: var(--serif);
+      font-size: clamp(18px, 2.1vw, 26px);
+      font-weight: 300;
+      line-height: 1.48;
+      color: var(--text);
+      margin-bottom: 32px;
+      max-width: 440px;
+    }
+
+    .testimonial-stars { display: flex; gap: 4px; margin-bottom: 18px; }
+    .star { color: #7a8c6a; font-size: 13px; }
+
+    .testimonial-author strong {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: 0.04em;
+    }
+
+    .testimonial-author span { font-size: 11px; color: var(--muted); }
+
+    .testimonial-img {
+      position: relative;
+      overflow: hidden;
+      background: #cec8c2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px;
+    }
+    .testimonial-img img {
+      width: 100%;
+      height: 100%;
+      max-height: 400px;
+      object-fit: contain;
+      object-position: center center;
+      transition: transform 0.7s ease;
+    }
+    .testimonial-img:hover img { transform: scale(1.03); }
+
+
+    /* â”€â”€ FAQ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    .faq {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 0;
+      padding: 104px 88px;
+      background: var(--cream2);
+    }
+
+    .faq-header {
+      padding-right: 72px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .faq-title {
+      font-family: var(--serif);
+      font-size: clamp(30px, 3.8vw, 52px);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .faq-sub {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.92;
+      max-width: 300px;
+      margin-bottom: 40px;
+    }
+
+    .faq-wa-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 11px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text);
+      padding: 11px 22px;
+      border: 1px solid var(--border);
+      width: fit-content;
+      transition: all 0.2s;
+    }
+
+    .faq-wa-link:hover {
+      background: var(--text);
+      color: var(--cream);
+      border-color: var(--text);
+    }
+
+    .faq-wa-link svg { width: 14px; height: 14px; fill: currentColor; }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 22px 0;
+    }
+
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+
+    .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      font-size: 13.5px;
+      font-weight: 400;
+      color: var(--text);
+      user-select: none;
+    }
+
+    .faq-icon {
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--muted);
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .faq-a {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.92;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding-top 0.3s;
+    }
+
+    .faq-item.open .faq-a { max-height: 240px; padding-top: 14px; }
+
+
+    /* â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    footer {
+      background: #1b2637;
+      padding: 88px 88px 52px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 52px;
+      padding-bottom: 72px;
+      border-bottom: 1px solid rgba(232, 226, 216, 0.08);
+    }
+
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 400;
+      color: #e8e2d8;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .footer-crp {
+      font-size: 10px;
+      color: rgba(232, 226, 216, 0.35);
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 22px;
+    }
+
+    .footer-headline {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.8vw, 38px);
+      font-weight: 300;
+      line-height: 1.16;
+      color: #eae3d8;
+      margin-bottom: 28px;
+    }
+
+    .footer-headline em { font-style: italic; }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-btn {
+      width: 33px; height: 33px;
+      border: 1px solid rgba(232, 226, 216, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(232, 226, 216, 0.4);
+      font-size: 11px;
+      transition: all 0.2s;
+    }
+
+    .social-btn:hover {
+      border-color: rgba(232, 226, 216, 0.45);
+      color: #e8e2d8;
+    }
+
+    .footer-col-label {
+      font-size: 9.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(232, 226, 216, 0.3);
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .footer-info {
+      font-size: 12.5px;
+      color: rgba(232, 226, 216, 0.5);
+      line-height: 1.95;
+    }
+
+    .footer-info address { font-style: normal; }
+
+    .footer-info a {
+      color: rgba(232, 226, 216, 0.5);
+      transition: color 0.2s;
+    }
+
+    .footer-info a:hover { color: #e8e2d8; }
+
+    .footer-wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 20px;
+      background: var(--wa);
+      color: #fff;
+      padding: 11px 22px;
+      font-size: 11px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+
+    .footer-wa-btn:hover { background: #1eb858; }
+    .footer-wa-btn svg { width: 14px; height: 14px; fill: #fff; }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 36px;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(232, 226, 216, 0.22);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 11px;
+      color: rgba(232, 226, 216, 0.22);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: rgba(232, 226, 216, 0.6); }
+
+    /* â”€â”€ DIVIDER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    .rule {
+      height: 1px;
+      background: var(--border);
+      margin: 0 88px;
+    }
+
+    /* â”€â”€ RESPONSIVE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* ── HAMBURGER MENU ─────────────────────────────── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: #e8e2d8;
+      transition: all 0.3s ease;
+    }
+    .mobile-nav-open {
+      position: fixed;
+      inset: 0;
+      background: #1b2637;
+      z-index: 9998;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .mobile-nav-open.active { opacity: 1; pointer-events: all; }
+    .mobile-nav-open a {
+      font-family: var(--serif);
+      font-size: clamp(28px, 8vw, 48px);
+      font-weight: 300;
+      color: #eae3d8;
+      text-decoration: none;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(232,226,216,0.08);
+      width: 80%;
+      text-align: center;
+      transition: color 0.2s;
+    }
+    .mobile-nav-open a:hover { color: #fff; }
+    .mobile-nav-close {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      background: none;
+      border: none;
+      color: #e8e2d8;
+      font-size: 32px;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .mobile-wa-link {
+      margin-top: 32px;
+      background: var(--wa);
+      color: #fff !important;
+      padding: 14px 36px !important;
+      border: none !important;
+      font-family: var(--sans) !important;
+      font-size: 13px !important;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 960px) {
+      nav { padding: 16px 28px; }
+      .nav-links, .nav-crp { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero-content { padding: 0 28px 72px; max-width: 100%; }
+      .hero-scroll { display: none; }
+      .about, .elevate, .testimonial, .faq { grid-template-columns: 1fr; }
+      .about-right { display: none; }
+      .about-left { padding: 72px 28px; }
+      .services { padding: 72px 28px; }
+      .services-head { grid-template-columns: 1fr; gap: 20px; }
+      .service-photos { grid-template-columns: 1fr 1fr; height: auto; }
+      .service-photo { height: 200px; }
+      .service-photos .service-photo:nth-child(3) { display: none; }
+      .elevate-img { height: 340px; position: relative; }
+      .elevate-img img { position: absolute; }
+      .elevate-content { padding: 64px 28px; }
+      .testimonial-img { height: 320px; padding: 24px; position: relative; }
+      .testimonial-img img { position: relative; max-height: 270px; }
+      .testimonial-content { padding: 64px 28px; }
+      .faq { padding: 72px 28px; }
+      .faq-header { padding-right: 0; margin-bottom: 44px; }
+      footer { padding: 72px 28px 44px; }
+      .footer-top { grid-template-columns: 1fr; gap: 36px; }
+      .footer-bottom { flex-direction: column; gap: 16px; }
+      .rule { margin: 0 28px; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+      .service-item { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .service-tags { margin-left: 0; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-content { padding: 0 20px 56px; }
+      .services { padding: 56px 20px; }
+      .about-left { padding: 56px 20px; }
+      .elevate-content { padding: 48px 20px; }
+      .testimonial-content { padding: 48px 20px; }
+      .faq { padding: 56px 20px; }
+      footer { padding: 56px 20px 36px; }
+      .rule { margin: 0 20px; }
+      .service-photos { grid-template-columns: 1fr; }
+      .service-photo { height: 220px; }
+      .service-photos .service-photo:nth-child(2),
+      .service-photos .service-photo:nth-child(3) { display: none; }
+      .service-modal-card { padding: 28px 20px; max-height: 85vh; overflow-y: auto; }
+      .modal-details-grid { grid-template-columns: 1fr; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="mobile-nav-open" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Fechar menu">&#x2715;</button>
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="index.html#services">Atendimento</a>
+    <a href="index.html#online">Terapia Online</a>
+    <a href="index.html#faq">Perguntas</a>
+    <a href="contato.html">Contato</a>
+    <a href="https://wa.me/5537999999999?text=Olá%20Sérgio%2C%20gostaria%20de%20agendar%20uma%20consulta." class="mobile-wa-link" target="_blank" rel="noopener">Agendar Consulta</a>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-brand">
+      <a href="index.html" style="display:flex; align-items:center; gap:12px;">
+        <img src="logo2.webp" alt="Sérgio Siriani" class="nav-logo-img" />
+        <div class="nav-logo-text">
+          <span class="nav-logo">Sérgio Siriani</span>
+          <span class="nav-crp">Psicólogo · CRP 04/XXXXX</span>
+        </div>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="index.html#services">Atendimento</a></li>
+      <li><a href="index.html#online">Terapia Online</a></li>
+      <li><a href="index.html#faq">Perguntas</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://wa.me/5537999999999?text=Olá%20Sérgio%2C%20gostaria%20de%20agendar%20uma%20consulta."
+         class="nav-cta" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.122 1.533 5.855L0 24l6.335-1.52A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.812 9.812 0 01-5.032-1.388l-.361-.214-3.761.902.944-3.658-.235-.374A9.818 9.818 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z"/></svg>
+        Agendar Consulta
+      </a>
+      <button class="nav-hamburger" id="hamburgerBtn" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Um espaÃ§o seguro para<br>vocÃª se <em>conhecer melhor.</em>
+      </h1>
+      <p class="hero-sub">
+        PsicÃ³logo SÃ©rgio Siriani. Atendimento online para todo o Brasil
+        e presencial em Lagoa da Prata&nbsp;â€“&nbsp;MG.
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5537999999999?text=OlÃ¡%20SÃ©rgio%2C%20gostaria%20de%20agendar%20uma%20consulta."
+           class="btn-wa" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.122 1.533 5.855L0 24l6.335-1.52A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.812 9.812 0 01-5.032-1.388l-.361-.214-3.761.902.944-3.658-.235-.374A9.818 9.818 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a href="#about" class="btn-outline">Conhecer o trabalho &nbsp;â€º</a>
+      </div>
+    </div>
+    <div class="hero-scroll">Rolar</div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-left">
+      <h2 class="about-title" data-reveal>
+        Meu objetivo Ã© criar um espaÃ§o de <em>escuta genuÃ­na,</em>
+        onde vocÃª possa se expressar sem julgamentos e avanÃ§ar no
+        seu processo de autoconhecimento.
+      </h2>
+      <p class="about-body" data-reveal>
+        Sou SÃ©rgio Siriani, psicÃ³logo formado com foco em psicoterapia.
+        Acredito que buscar ajuda Ã© um ato de coragem e responsabilidade
+        consigo mesmo. Atendo pessoas de diferentes realidades e contextos
+        de vida, sempre com respeito, Ã©tica e comprometimento com o seu
+        bem-estar.
+      </p>
+      <div class="about-dots" data-reveal>
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <div class="about-right">
+      <div class="about-stats" data-reveal="right">
+        <div>
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Sigilo e confidencialidade garantidos</span>
+        </div>
+        <div>
+          <span class="stat-num">Online</span>
+          <span class="stat-label">Para todo o Brasil, de qualquer lugar</span>
+        </div>
+      </div>
+      <div class="about-img-single" data-reveal>
+        <img src="fotos/objetivo.webp" alt="SÃ©rgio Siriani, psicÃ³logo clÃ­nico" />
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-head">
+      <h2 class="services-title" data-reveal>Como posso te ajudar.</h2>
+      <p class="services-desc" data-reveal>
+        Cada pessoa tem uma histÃ³ria Ãºnica. O meu trabalho Ã© caminhar
+        ao seu lado, no seu ritmo, construindo juntos as ferramentas
+        que fazem sentido para a sua vida.
+      </p>
+    </div>
+
+    <div class="service-item" data-reveal onclick="openServiceModal(1)" role="button" tabindex="0">
+      <div class="service-left">
+        <span class="service-num">01</span>
+        <span class="service-name">Psicoterapia Individual</span>
+      </div>
+      <div class="service-tags">
+        <span class="service-tag active" onclick="openServiceModal(1); event.stopPropagation();">Online</span>
+        <span class="service-tag" onclick="openServiceModal(1); event.stopPropagation();">Presencial</span>
+        <span class="service-tag" onclick="openServiceModal(1); event.stopPropagation();">Lagoa da Prata</span>
+      </div>
+      <span class="service-arrow">â€º</span>
+    </div>
+
+    <div class="service-item" data-reveal onclick="openServiceModal(2)" role="button" tabindex="0">
+      <div class="service-left">
+        <span class="service-num">02</span>
+        <span class="service-name">Ansiedade &amp; Estresse</span>
+      </div>
+      <div class="service-tags">
+        <span class="service-tag" onclick="openServiceModal(2); event.stopPropagation();">Autoconhecimento</span>
+        <span class="service-tag active" onclick="openServiceModal(2); event.stopPropagation();">Acolhimento</span>
+        <span class="service-tag" onclick="openServiceModal(2); event.stopPropagation();">Bem-estar</span>
+      </div>
+      <span class="service-arrow">â€º</span>
+    </div>
+
+    <div class="service-photos" data-reveal>
+      <div class="service-photo">
+        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&q=85" alt="EspaÃ§o de escuta e terapia" />
+      </div>
+      <div class="service-photo">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=85" alt="Atendimento e suporte online" />
+      </div>
+      <div class="service-photo">
+        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=85" alt="EquilÃ­brio e bem-estar" />
+      </div>
+    </div>
+
+    <div class="service-item" data-reveal onclick="openServiceModal(3)" role="button" tabindex="0">
+      <div class="service-left">
+        <span class="service-num">03</span>
+        <span class="service-name">Relacionamentos &amp; Autoestima</span>
+      </div>
+      <div class="service-tags">
+        <span class="service-tag" onclick="openServiceModal(3); event.stopPropagation();">Identidade</span>
+        <span class="service-tag active" onclick="openServiceModal(3); event.stopPropagation();">VÃ­nculos</span>
+        <span class="service-tag" onclick="openServiceModal(3); event.stopPropagation();">Crescimento</span>
+      </div>
+      <span class="service-arrow">â€º</span>
+    </div>
+
+    <div class="service-item" data-reveal onclick="openServiceModal(4)" role="button" tabindex="0">
+      <div class="service-left">
+        <span class="service-num">04</span>
+        <span class="service-name">Luto &amp; TransiÃ§Ãµes de Vida</span>
+      </div>
+      <div class="service-tags">
+        <span class="service-tag" onclick="openServiceModal(4); event.stopPropagation();">ElaboraÃ§Ã£o</span>
+        <span class="service-tag active" onclick="openServiceModal(4); event.stopPropagation();">Suporte</span>
+        <span class="service-tag" onclick="openServiceModal(4); event.stopPropagation();">RessignificaÃ§Ã£o</span>
+      </div>
+      <span class="service-arrow">â€º</span>
+    </div>
+  </section>
+
+
+  <!-- TERAPIA ONLINE -->
+  <section class="elevate" id="online">
+    <div class="elevate-img">
+      <img src="fotos/8.webp" alt="Terapia online" />
+    </div>
+    <div class="elevate-content">
+      <h2 class="elevate-title" data-reveal="right">
+        Terapia online:<br><em>cuidado onde vocÃª estiver.</em>
+      </h2>
+      <div class="elevate-points">
+        <div class="elevate-point" data-reveal="right">SessÃµes pelo computador, tablet ou celular</div>
+        <div class="elevate-point" data-reveal="right">Sem deslocamento â€” vocÃª escolhe o ambiente</div>
+        <div class="elevate-point" data-reveal="right">Mesma qualidade e sigilo do atendimento presencial</div>
+        <div class="elevate-point" data-reveal="right">Atendimento para todo o Brasil</div>
+        <div class="elevate-point" data-reveal="right">Plataformas seguras e regulamentadas pelo CFP</div>
+      </div>
+      <a href="https://wa.me/5537999999999?text=OlÃ¡%20SÃ©rgio%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20terapia%20online."
+         class="elevate-btn" target="_blank" rel="noopener" data-reveal="right">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.122 1.533 5.855L0 24l6.335-1.52A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.812 9.812 0 01-5.032-1.388l-.361-.214-3.761.902.944-3.658-.235-.374A9.818 9.818 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z"/></svg>
+        Tirar dÃºvidas pelo WhatsApp
+      </a>
+    </div>
+  </section>
+
+
+  <!-- DEPOIMENTO (placeholder atÃ© confirmar com SÃ©rgio) -->
+  <section class="testimonial" id="testimonials">
+    <div class="testimonial-content">
+      <span class="quote-mark" data-reveal>"</span>
+      <p class="testimonial-text" data-reveal>
+        Eu nunca imaginei que a terapia online pudesse ser tÃ£o presente.
+        Me sinto acolhida e entendida em cada sessÃ£o. Foi uma das melhores
+        decisÃµes que tomei pela minha saÃºde mental.
+      </p>
+      <div class="testimonial-stars" data-reveal>
+        <span class="star">â˜…</span><span class="star">â˜…</span>
+        <span class="star">â˜…</span><span class="star">â˜…</span><span class="star">â˜…</span>
+      </div>
+      <div class="testimonial-author" data-reveal>
+        <strong>â€” Paciente Online</strong>
+        <span>Depoimento a confirmar com SÃ©rgio</span>
+      </div>
+    </div>
+    <div class="testimonial-img" data-reveal>
+      <img src="fotos/mao-erguendo-cerebro-azul.webp" alt="MÃ£o segurando cÃ©rebro - SÃ©rgio Siriani Psicologia" />
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="faq-header">
+      <h2 class="faq-title" data-reveal>DÃºvidas<br>Frequentes</h2>
+      <p class="faq-sub" data-reveal>
+        Ainda tem alguma pergunta? Mande uma mensagem pelo WhatsApp â€”
+        responderei com prazer.
+      </p>
+      <a href="https://wa.me/5537999999999?text=OlÃ¡%20SÃ©rgio%2C%20tenho%20uma%20dÃºvida."
+         class="faq-wa-link" target="_blank" rel="noopener" data-reveal>
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.122 1.533 5.855L0 24l6.335-1.52A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.812 9.812 0 01-5.032-1.388l-.361-.214-3.761.902.944-3.658-.235-.374A9.818 9.818 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z"/></svg>
+        Perguntar pelo WhatsApp
+      </a>
+    </div>
+
+    <div class="faq-list" data-reveal>
+
+      <div class="faq-item open">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Como funciona a terapia online?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          As sessÃµes acontecem por videochamada, em plataformas seguras e
+          aprovadas pelo Conselho Federal de Psicologia (CFP). VocÃª acessa
+          de qualquer dispositivo â€” computador, tablet ou celular â€” de um
+          lugar tranquilo da sua escolha. A dinÃ¢mica Ã© a mesma da terapia
+          presencial: escuta ativa, sigilo total e construÃ§Ã£o conjunta do
+          processo terapÃªutico.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          O que Ã© psicoterapia?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          Psicoterapia Ã© um processo de cuidado da saÃºde mental conduzido por
+          um psicÃ³logo. AtravÃ©s de conversas e tÃ©cnicas especÃ­ficas, ajuda vocÃª
+          a compreender melhor seus pensamentos, emoÃ§Ãµes e comportamentos,
+          ampliando o autoconhecimento e favorecendo mudanÃ§as positivas na sua vida.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Quando devo procurar terapia?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          NÃ£o Ã© preciso estar em crise para buscar apoio. A terapia ajuda em
+          momentos de ansiedade, tristeza, dificuldades nos relacionamentos,
+          baixa autoestima, luto, transiÃ§Ãµes de vida e tambÃ©m quando vocÃª quer
+          simplesmente se conhecer melhor. Se algo estÃ¡ te incomodando, jÃ¡ Ã©
+          motivo suficiente para conversar.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          JÃ¡ fiz terapia antes e nÃ£o funcionou. Posso tentar de novo?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          Sim, e isso Ã© muito comum. Cada processo terapÃªutico Ã© Ãºnico, assim como
+          cada profissional tem uma abordagem diferente. Uma experiÃªncia anterior
+          que nÃ£o funcionou nÃ£o determina os resultados futuros. O mais importante
+          Ã© encontrar um psicÃ³logo com quem vocÃª se sinta Ã  vontade â€” e isso
+          podemos construir juntos desde a primeira conversa.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Atende por plano de saÃºde?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          No momento, atendo de forma particular. Os valores e condiÃ§Ãµes de
+          pagamento podem ser conversados diretamente pelo WhatsApp. Busco
+          sempre encontrar uma forma que caiba na sua realidade.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Quais sÃ£o os horÃ¡rios de atendimento?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          Os horÃ¡rios disponÃ­veis podem ser consultados diretamente pelo
+          WhatsApp. Tenho flexibilidade para encontrar um horÃ¡rio que funcione
+          para a sua rotina, inclusive em alguns horÃ¡rios alternativos.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="footer-top">
+      <div>
+        <span class="footer-logo">SÃ©rgio Siriani</span>
+        <span class="footer-crp">PsicÃ³logo Â· CRP 04/XXXXX</span>
+        <h3 class="footer-headline">
+          DÃª o primeiro passo.<br><em>VocÃª merece esse cuidado.</em>
+        </h3>
+        <div class="footer-social">
+          <a href="https://instagram.com/" target="_blank" rel="noopener"
+             class="social-btn" title="Instagram">ig</a>
+          <a href="https://wa.me/5537999999999" target="_blank" rel="noopener"
+             class="social-btn" title="WhatsApp">wa</a>
+        </div>
+      </div>
+
+      <div>
+        <span class="footer-col-label">Atendimento</span>
+        <div class="footer-info">
+          Terapia Online<br>para todo o Brasil<br><br>
+          Presencial em<br>Lagoa da Prata â€“ MG
+        </div>
+      </div>
+
+      <div>
+        <span class="footer-col-label">Contato</span>
+        <div class="footer-info">
+          <a href="https://wa.me/5537999999999" target="_blank" rel="noopener">(37) 9 9999-9999</a><br>
+          <a href="https://instagram.com/" target="_blank" rel="noopener">@sergiosiriani.psi</a>
+        </div>
+        <a href="https://wa.me/5537999999999?text=OlÃ¡%20SÃ©rgio%2C%20gostaria%20de%20agendar%20uma%20consulta."
+           class="footer-wa-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.122 1.533 5.855L0 24l6.335-1.52A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.812 9.812 0 01-5.032-1.388l-.361-.214-3.761.902.944-3.658-.235-.374A9.818 9.818 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z"/></svg>
+          Agendar Agora
+        </a>
+      </div>
+
+      <div>
+        <span class="footer-col-label">HorÃ¡rios</span>
+        <div class="footer-info">
+          Segunda â€“ Sexta<br>
+          Consultar disponibilidade<br>pelo WhatsApp
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">Â© 2026 SÃ©rgio Siriani Â· PsicÃ³logo Â· CRP 04/XXXXX. Todos os direitos reservados.</p>
+      <ul class="footer-links">
+        <li><a href="index.html">InÃ­cio</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="#">Sigilo Profissional</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+  <!-- SERVICE MODAL -->
+  <div class="service-modal-backdrop" id="serviceModal" aria-hidden="true" onclick="closeServiceModal(event)">
+    <div class="service-modal-card" role="dialog" aria-modal="true" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeServiceModal()" aria-label="Fechar modal">
+        &times;
+      </button>
+      
+      <div class="modal-header">
+        <span class="modal-num" id="modalNum">01 / PSICOTERAPIA</span>
+        <h3 class="modal-title" id="modalTitle">Psicoterapia Individual</h3>
+      </div>
+
+      <div class="modal-body">
+        <p class="modal-lead" id="modalLead">Um espaÃ§o exclusivo para vocÃª falar abertamente sobre suas questÃµes e encontrar clareza.</p>
+        <p class="modal-text" id="modalText">A psicoterapia individual Ã© voltada para quem busca entender melhor seus sentimentos, comportamentos e padrÃµes de pensamento.</p>
+        
+        <div class="modal-highlights" id="modalHighlights"></div>
+
+        <div class="modal-details-grid">
+          <div class="modal-detail-item">
+            <span class="modal-detail-label">Modalidade</span>
+            <span class="modal-detail-val" id="modalFormat">Online & Presencial</span>
+          </div>
+          <div class="modal-detail-item">
+            <span class="modal-detail-label">DuraÃ§Ã£o</span>
+            <span class="modal-detail-val">50 minutos / sessÃ£o</span>
+          </div>
+          <div class="modal-detail-item">
+            <span class="modal-detail-label">Sigilo</span>
+            <span class="modal-detail-val">100% Protegido (CFP)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a href="#" class="modal-wa-btn" id="modalWaBtn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.122 1.533 5.855L0 24l6.335-1.52A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.812 9.812 0 01-5.032-1.388l-.361-.214-3.761.902.944-3.658-.235-.374A9.818 9.818 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z"/></svg>
+          Conversar sobre este atendimento no WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script>
+    /* â”€â”€ Lenis Smooth Scroll Initialization â”€â”€ */
+    const lenis = new Lenis({
+      duration: 1.25,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      smoothTouch: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    /* â”€â”€ Nav scroll â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    const nav = document.getElementById('nav');
+    lenis.on('scroll', (e) => {
+      nav.classList.toggle('scrolled', e.scroll > 48);
+    });
+
+    /* â”€â”€ Hero ken-burns â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    window.addEventListener('load', () => {
+      document.getElementById('hero').classList.add('loaded');
+    });
+
+    /* â”€â”€ Reveal on scroll â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    const revealEls = document.querySelectorAll('[data-reveal]');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const siblings = [...entry.target.parentElement.querySelectorAll('[data-reveal]')];
+          const idx = siblings.indexOf(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('is-visible');
+          }, idx * 90);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    /* â”€â”€ FAQ accordion â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    function toggleFaq(el) {
+      const item = el.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    /* â”€â”€ Service Modal System â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    const serviceData = {
+      1: {
+        num: "01 / PSICOTERAPIA",
+        title: "Psicoterapia Individual",
+        lead: "Um espaÃ§o acolhedor e confidencial para vocÃª se expressar livremente e desenvolver autoconhecimento.",
+        text: "A psicoterapia individual Ã© voltada para quem busca compreender suas emoÃ§Ãµes, rever padrÃµes de comportamento e encontrar novas perspectivas para sua histÃ³ria. As sessÃµes ocorrem no seu ritmo, respeitando sua individualidade e garantindo sigilo absoluto fundamentado no cÃ³digo de Ã©tica profissional.",
+        tags: ["Terapia Online (Todo o Brasil)", "Presencial em Lagoa da Prata", "SessÃµes de 50 min", "Sigilo Ã‰tico CFP"],
+        format: "Online & Presencial",
+        waMsg: "OlÃ¡ SÃ©rgio! Gostaria de conversar e tirar dÃºvidas sobre a Psicoterapia Individual."
+      },
+      2: {
+        num: "02 / CUIDADO EMOCIONAL",
+        title: "Ansiedade & Estresse",
+        lead: "EstratÃ©gias prÃ¡ticas e escuta clÃ­nica para desacelerar a mente e lidar com a sobrecarga cotidiana.",
+        text: "PreocupaÃ§Ã£o em excesso, aperto no peito, noites mal dormidas e tensÃ£o constante sÃ£o sinais comuns de que o corpo e a mente estÃ£o no limite. Em sessÃ£o, identificamos as causas desses gatilhos e construÃ­mos recursos saudÃ¡veis para que vocÃª retome o controle da sua rotina e recupere o bem-estar.",
+        tags: ["GestÃ£o da Ansiedade", "AlÃ­vio de Sobrecarga", "Gatilhos Emocionais", "Qualidade de Vida"],
+        format: "Online & Presencial",
+        waMsg: "OlÃ¡ SÃ©rgio! Gostaria de saber mais sobre o acompanhamento para Ansiedade e Estresse."
+      },
+      3: {
+        num: "03 / VÃNCULOS & IDENTIDADE",
+        title: "Relacionamentos & Autoestima",
+        lead: "Aprenda a estabelecer limites saudÃ¡veis, valorizar sua histÃ³ria e se relacionar com mais leveza.",
+        text: "InseguranÃ§a, medo de desagradar, dependÃªncia emocional e dificuldades em expressar necessidades afetam tanto o amor-prÃ³prio quanto as relaÃ§Ãµes afetivas e profissionais. A psicoterapia oferece um caminho de autodescoberta para fortalecer sua autoconfianÃ§a e nutrir relaÃ§Ãµes mais maduras.",
+        tags: ["Fortalecimento da Autoestima", "Limites SaudÃ¡veis", "ComunicaÃ§Ã£o Assertiva", "RelaÃ§Ãµes Afetivas"],
+        format: "Online & Presencial",
+        waMsg: "OlÃ¡ SÃ©rgio! Gostaria de entender mais sobre o atendimento para Autoestima e Relacionamentos."
+      },
+      4: {
+        num: "04 / TRANSIÃ‡Ã•ES & APOIO",
+        title: "Luto & TransiÃ§Ãµes de Vida",
+        lead: "Um colo seguro para atravessar momentos de perda, rompimentos ou grandes mudanÃ§as de fase.",
+        text: "Passar pela dor de perder alguÃ©m querido, encarar o fim de um relacionamento longo ou vivenciar mudanÃ§as de trabalho e cidade pode parecer desestruturante. No consultÃ³rio, vocÃª encontra acolhimento para elaborar a dor no seu prÃ³prio tempo, ressignificar memÃ³rias e reconstruir o sentido da sua caminhada.",
+        tags: ["Acolhimento no Luto", "TransiÃ§Ãµes de Carreira", "MudanÃ§as de Vida", "RessignificaÃ§Ã£o"],
+        format: "Online & Presencial",
+        waMsg: "OlÃ¡ SÃ©rgio! Gostaria de conversar sobre suporte terapÃªutico para Luto ou TransiÃ§Ã£o de Vida."
+      }
+    };
+
+    function openServiceModal(id) {
+      const data = serviceData[id];
+      if (!data) return;
+
+      document.getElementById('modalNum').textContent = data.num;
+      document.getElementById('modalTitle').textContent = data.title;
+      document.getElementById('modalLead').textContent = data.lead;
+      document.getElementById('modalText').textContent = data.text;
+      document.getElementById('modalFormat').textContent = data.format;
+
+      const highlightsEl = document.getElementById('modalHighlights');
+      highlightsEl.innerHTML = '';
+      data.tags.forEach(t => {
+        const span = document.createElement('span');
+        span.className = 'modal-tag';
+        span.textContent = t;
+        highlightsEl.appendChild(span);
+      });
+
+      const waBtn = document.getElementById('modalWaBtn');
+      waBtn.href = `https://wa.me/5537999999999?text=${encodeURIComponent(data.waMsg)}`;
+
+      const modal = document.getElementById('serviceModal');
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      if (typeof lenis !== 'undefined') lenis.stop();
+    }
+
+    function closeServiceModal(e) {
+      if (e && e.target && !e.target.classList.contains('service-modal-backdrop') && !e.target.closest('.modal-close-btn')) {
+        return;
+      }
+      const modal = document.getElementById('serviceModal');
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (typeof lenis !== 'undefined') lenis.start();
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeServiceModal();
+    });
+
+    /* â”€â”€ Smooth anchor scroll with Lenis â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const href = link.getAttribute('href');
+        if (href && href.length > 1) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            lenis.scrollTo(target, { offset: -20, duration: 1.2 });
+          }
+        }
+      });
+    });
+  </script>
+
+  <script>
+    // Hamburger menu
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileNavClose = document.getElementById('mobileNavClose');
+
+    function openMobileNav() {
+      mobileNav.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMobileNav() {
+      mobileNav.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMobileNav);
+    if (mobileNavClose) mobileNavClose.addEventListener('click', closeMobileNav);
+    if (mobileNav) {
+      mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMobileNav);
+      });
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeMobileNav();
+    });
+  </script>
+</body>
+</html>
+
