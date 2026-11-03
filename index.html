@@ -481,14 +481,6 @@
       border-color: var(--text);
     }
 
-    .service-arrow {
-      font-size: 20px;
-      color: var(--muted);
-      transition: transform 0.2s;
-    }
-
-    .service-item:hover .service-arrow { transform: translateX(5px); }
-
     /* ── MODAL ─────────────────────────────────── */
     .service-modal-backdrop {
       position: fixed;
@@ -1248,7 +1240,7 @@
           <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.122 1.533 5.855L0 24l6.335-1.52A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.812 9.812 0 01-5.032-1.388l-.361-.214-3.761.902.944-3.658-.235-.374A9.818 9.818 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z"/></svg>
           Agendar pelo WhatsApp
         </a>
-        <a href="#about" class="btn-outline">Conhecer o trabalho &nbsp;⬺</a>
+        <a href="#about" class="btn-outline">Conhecer o trabalho</a>
       </div>
     </div>
     <div class="hero-scroll">Rolar</div>
@@ -1315,7 +1307,6 @@
         <span class="service-tag" onclick="openServiceModal(1); event.stopPropagation();">Presencial</span>
         <span class="service-tag" onclick="openServiceModal(1); event.stopPropagation();">Lagoa da Prata</span>
       </div>
-      <span class="service-arrow">⬺</span>
     </div>
 
     <div class="service-item" data-reveal onclick="openServiceModal(2)" role="button" tabindex="0">
@@ -1328,12 +1319,11 @@
         <span class="service-tag active" onclick="openServiceModal(2); event.stopPropagation();">Acolhimento</span>
         <span class="service-tag" onclick="openServiceModal(2); event.stopPropagation();">Bem-estar</span>
       </div>
-      <span class="service-arrow">⬺</span>
     </div>
 
     <div class="service-photos" data-reveal>
       <div class="service-photo">
-        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&q=85" alt="Espaço de escuta e terapia" />
+        <img src="https://images.unsplash.com/photo-1541976844346-f18aeac57b06?w=600&q=85" alt="Espaço de escuta e terapia psicológica" />
       </div>
       <div class="service-photo">
         <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=85" alt="Atendimento e suporte online" />
@@ -1353,7 +1343,6 @@
         <span class="service-tag active" onclick="openServiceModal(3); event.stopPropagation();">Vínculos</span>
         <span class="service-tag" onclick="openServiceModal(3); event.stopPropagation();">Crescimento</span>
       </div>
-      <span class="service-arrow">⬺</span>
     </div>
 
     <div class="service-item" data-reveal onclick="openServiceModal(4)" role="button" tabindex="0">
@@ -1366,7 +1355,6 @@
         <span class="service-tag active" onclick="openServiceModal(4); event.stopPropagation();">Suporte</span>
         <span class="service-tag" onclick="openServiceModal(4); event.stopPropagation();">Ressignificação</span>
       </div>
-      <span class="service-arrow">⬺</span>
     </div>
   </section>
 
