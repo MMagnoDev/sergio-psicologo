@@ -280,6 +280,14 @@
       background: var(--cream2);
       padding: 56px 48px;
       border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-wrapper form {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     .form-title {
@@ -332,9 +340,16 @@
       background: #fff;
     }
 
+    .form-group:last-of-type {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
     .form-textarea {
       resize: vertical;
       min-height: 110px;
+      flex: 1;
     }
 
     .btn-submit {
@@ -365,7 +380,7 @@
     }
 
     .direct-box {
-      margin-bottom: 40px;
+      margin-bottom: 24px;
     }
 
     .direct-title {
@@ -373,11 +388,11 @@
       font-size: clamp(26px, 3vw, 40px);
       font-weight: 300;
       line-height: 1.2;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
     }
 
     .direct-item {
-      padding: 24px 0;
+      padding: 16px 0;
       border-top: 1px solid var(--border);
     }
 
@@ -407,12 +422,14 @@
     }
 
     .direct-photo {
-      height: 280px;
+      flex: 1;
+      min-height: 460px;
+      aspect-ratio: 4 / 3;
       overflow: hidden;
-      margin-top: 24px;
     }
 
     .direct-photo img {
+      object-position: center 18%;
       transition: transform 0.7s ease;
     }
 
